@@ -10,7 +10,7 @@ struct Node{
 int main() {
   struct Node * head = NULL;
   char str [100];
-  //push-front func
+  //push-front function
   while (scanf("%s", str)!=EOF){
     if (strcmp(str, "push-front")==0){
       int n;
@@ -20,7 +20,7 @@ int main() {
       tempnode->value=n;
       head=tempnode;
       printf("%d\n", n);
-      //dump func
+      //dump function
     }else if (strcmp(str, "dump")==0){
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
       tempnode=head;
@@ -32,7 +32,7 @@ int main() {
         tempnode=tempnode->next;
       }
       printf("\n");}
-      //push-back func
+      //push-back function
     }else if(strcmp(str, "push-back")==0){
       int n;
       scanf("%d", &n);
@@ -42,7 +42,7 @@ int main() {
       tempnode->next=(struct Node *)malloc(sizeof(struct Node));
       tempnode->next->value=n;
       printf("%d\n", n);
-      //clearfunc
+      //clear function
     }else if(strcmp(str, "clear")==0){
       while (head->next!=NULL){
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
@@ -51,11 +51,11 @@ int main() {
       free(tempnode);
       }
       printf("empty\n");
-      //peek-front func
+      //peek-front function
     }else if(strcmp(str, "peek-front")==0){
       if (head->next==NULL){printf("empty\n");}else{
       printf("%d\n", head->value);}
-      //peek-back func
+      //peek-back function
     }else if(strcmp(str, "peek-back")==0){
       if (head->next==NULL){printf("empty\n");}else{
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
@@ -70,6 +70,7 @@ int main() {
       printf("%d\n", head->value);
       head=head->next;
       free(tempnode);}
+      //size function
     } else if(strcmp(str, "size")==0){
       int n=0;
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
