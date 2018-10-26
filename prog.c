@@ -8,8 +8,7 @@ struct Node{
 };
 
 int main() {
-  struct Node * head = (struct Node*)malloc(sizeof(struct Node));
-  head->next=NULL;
+  struct Node * head = NULL;
   char str [100];
   //push-front func
   while (scanf("%s", str)!=EOF){
@@ -25,10 +24,10 @@ int main() {
     }else if (strcmp(str, "dump")==0){
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
       tempnode=head;
-      if (head->next==NULL){
+      if (head==NULL){
         printf("empty\n");
       }else{
-      while(tempnode->next!=NULL){
+      while(tempnode!=NULL){
         printf("%d ",tempnode->value);
         tempnode=tempnode->next;
       }
@@ -41,7 +40,7 @@ int main() {
       tempnode=head;
       while (tempnode->next!=NULL)tempnode=tempnode->next;
       tempnode->next=(struct Node *)malloc(sizeof(struct Node));
-      tempnode->value=n;
+      tempnode->next->value=n;
       printf("%d\n", n);
       //clearfunc
     }else if(strcmp(str, "clear")==0){
@@ -53,7 +52,7 @@ int main() {
       }
       printf("empty\n");
       //peek-front func
-    }else if(cmp(str, "peek-front")==0){
+    }else if(strcmp(str, "peek-front")==0){
       if (head->next==NULL){printf("empty\n");}else{
       printf("%d\n", head->value);}
       //peek-back func
@@ -61,7 +60,7 @@ int main() {
       if (head->next==NULL){printf("empty\n");}else{
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
       tempnode=head;
-      while(tempnode->next->next!=NULL)tempnode=tempnode->next;
+      while(tempnode->next!=NULL)tempnode=tempnode->next;
       printf("%d\n", tempnode->value);}
       //pop-front function
     }else if(strcmp(str, "pop-front")==0){
@@ -71,16 +70,7 @@ int main() {
       printf("%d\n", head->value);
       head=head->next;
       free(tempnode);}
-      //pop-back function
-    }else if(strcmp(str, "pop-back")==0){
-      struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
-      tempnode=head;
-      while(tempnode->next->next->next!=NULL)tempnode=tempnode->next;
-      printf("%d\n",tempnode->next->value);
-      free(tempnode->next);
-      tempnode->next->next=NULL;
-      //print size
-    }else if(strcmp(str, "size")==0){
+    } else if(strcmp(str, "size")==0){
       int n=0;
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
       tempnode=head;
