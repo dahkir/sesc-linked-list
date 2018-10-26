@@ -14,12 +14,17 @@ int main() {
   while (scanf("%s", str)!=EOF){
     if (strcmp(str, "push-front")==0){
       int n;
-      scanf("%d", &n);
+      scanf("%d\n", &n);
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
+      if (head==NULL){
+        head= (struct Node *)malloc(sizeof(struct Node));
+        head->value=n;
+        printf("%d\n", n);
+      }else{
       tempnode->next=head;
       tempnode->value=n;
       head=tempnode;
-      printf("%d\n", n);
+      printf("%d\n", n);}
       //dump function
     }else if (strcmp(str, "dump")==0){
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
