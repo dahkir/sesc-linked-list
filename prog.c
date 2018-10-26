@@ -37,11 +37,15 @@ int main() {
       int n;
       scanf("%d", &n);
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
+      if (head==NULL){
+        head=(struct Node*)malloc(sizeof(struct Node));
+        head->value=n;
+        printf("%d\n", n);}else{
       tempnode=head;
       while (tempnode->next!=NULL)tempnode=tempnode->next;
       tempnode->next=(struct Node *)malloc(sizeof(struct Node));
       tempnode->next->value=n;
-      printf("%d\n", n);
+      printf("%d\n", n);}
       //clear function
     }else if(strcmp(str, "clear")==0){
       while (head->next!=NULL){
