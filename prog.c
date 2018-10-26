@@ -53,7 +53,7 @@ int main() {
       printf("%d\n", n);}
       //clear function
     }else if(strcmp(str, "clear")==0){
-      while (head->next!=NULL){
+      while (head!=NULL){
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
       tempnode=head;
       head=head->next;
@@ -69,7 +69,7 @@ int main() {
       if (head==NULL){printf("empty\n");}else{
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
       tempnode=head;
-      while(tempnode!=NULL)tempnode=tempnode->next;
+      while(tempnode->next!=NULL)tempnode=tempnode->next;
       printf("%d\n", tempnode->value);}
       //pop-front function
     }else if(strcmp(str, "pop-front")==0){
