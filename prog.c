@@ -57,10 +57,10 @@ int main() {
       printf("%d\n", head->value);}
       //peek-back function
     }else if(strcmp(str, "peek-back")==0){
-      if (head->next==NULL){printf("empty\n");}else{
+      if (head==NULL){printf("empty\n");}else{
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
       tempnode=head;
-      while(tempnode->next!=NULL)tempnode=tempnode->next;
+      while(tempnode!=NULL)tempnode=tempnode->next;
       printf("%d\n", tempnode->value);}
       //pop-front function
     }else if(strcmp(str, "pop-front")==0){
@@ -75,7 +75,7 @@ int main() {
       int n=0;
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
       tempnode=head;
-      while(tempnode->next!=NULL){tempnode=tempnode->next;n++;};
+      while(tempnode!=NULL){tempnode=tempnode->next;n++;};
       printf("%d\n", n);
     }else printf("achtung! unknown operation %s\n", str);
   }
