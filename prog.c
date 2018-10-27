@@ -53,7 +53,7 @@
        printf("%d\n", n);}
        //clear function
      }else if(strcmp(str, "clear")==0){
-       while (head->next!=NULL){
+       while (head!=NULL){
        while (head!=NULL){
        struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
        tempnode=head;
