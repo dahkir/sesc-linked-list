@@ -32,7 +32,7 @@ int main() {
       if (head==NULL){
         printf("empty\n");
       }else{
-      while(tempnode!=NULL){
+      while(head!=NULL){
         printf("%d ",tempnode->value);
         tempnode=tempnode->next;
       }
@@ -47,7 +47,7 @@ int main() {
         head->value=n;
         printf("%d\n", n);}else{
       tempnode=head;
-      while (tempnode->next!=NULL)tempnode=tempnode->next;
+      while (tempnode!=NULL)tempnode=tempnode->next;
       tempnode->next=(struct Node *)malloc(sizeof(struct Node));
       tempnode->next->value=n;
       printf("%d\n", n);}
