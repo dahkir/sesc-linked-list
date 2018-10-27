@@ -54,9 +54,9 @@ int main() {
       //clear function
     }else if(strcmp(str, "clear")==0){
       while (head!=NULL){
-       tempnode=head;
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
       head=head->next;
+      tempnode=head;
       free(tempnode);
       }
       printf("empty\n");
