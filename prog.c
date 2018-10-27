@@ -32,6 +32,7 @@ int main() {
       if (head==NULL){
         printf("empty\n");
       }else{
+        tempnode=head;
       while(tempnode!=NULL){
         printf("%d ",tempnode->value);
         tempnode=tempnode->next;
